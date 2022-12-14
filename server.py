@@ -151,6 +151,8 @@ def send_target_commands(conn):
                 client_response = str(conn.recv(2048), "utf-8")
                 print(client_response, end="")
                 if client_response[-3:] == "end":
+                    f = open("logs.txt", "w")
+                    f.write(client_response)
                     break
         except:
             print("Connection was lost!!!")
