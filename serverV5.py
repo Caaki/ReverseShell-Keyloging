@@ -121,7 +121,7 @@ def get_target(cmd):
         numeric_filter = filter(str.isdigit, cmd)
         numeric_string = "".join(numeric_filter)
         #target = cmd.replace('select ', '').strip()
-        target = int(target)
+        target = int(numeric_string)
         conn = all_connections[target]
 
         print(f"Connected to {str(all_addresses[target][0])}\n")
