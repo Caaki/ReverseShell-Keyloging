@@ -118,7 +118,7 @@ def get_target(cmd):
             `Returns 'con' object or 'None' depending if the connection was established`
     """
     try:
-        target = cmd.replace('select ', '')
+        target = cmd.replace('select ', '').strip()
         target = int(target)
         conn = all_connections[target]
 
