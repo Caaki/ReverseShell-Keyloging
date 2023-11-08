@@ -20,8 +20,8 @@ def socket_create():
         global s
         global spava
         spava = False
-        #host = '192.168.8.162'
-        host = '192.168.1.44'
+        host = '192.168.88.72'
+        #host = '192.168.1.44'
         port = 6769
         s = socket.socket()
     except socket.error as msg:
